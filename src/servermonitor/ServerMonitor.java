@@ -12,31 +12,31 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-
-
-
-
-/**
- *
- * @author daniel
- */
 public class ServerMonitor {
    
  public static void main(String[] args) throws IOException, ClassNotFoundException  {
        
+    String mensagem ="Inicializando Servidor";
+     
      FrmMonitor frm = new FrmMonitor();
-    frm.setVisible(true);
+     frm.setVisible(true);
      
-     String mensagem ="";
-
      ServerSocket servidor = new ServerSocket(12345);
-     System.out.println("Porta 12345 aberta!");
+     frm.exibir(mensagem);
+      
      
-     Socket connection= servidor.accept();
-     System.out.println("Nova conexão com o cliente " +   
-       connection.getInetAddress().getHostAddress());
+    Socket connection= servidor.accept();
+    
+    frm.exibir("Nova conexao: "+ connection.getInetAddress().getHostAddress());
+        
+    // System.out.println("Nova conexão com o cliente " +   
+      // connection.getInetAddress().getHostAddress());
      
      ObjectInputStream entrada = new ObjectInputStream(connection.getInputStream());
+     
+     mensagem = (String) entrada.readObject();
+     
+     frm.exibir(mensagem);
      
      do{
          mensagem = (String) entrada.readObject();

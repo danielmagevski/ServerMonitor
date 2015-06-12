@@ -17,6 +17,16 @@ public class FrmMonitor extends javax.swing.JFrame {
     public FrmMonitor() {
         initComponents();
     }
+    
+    public void exibir(String mensagem){
+        
+        String texto="";
+        
+        texto = jTextArea1.getText();
+        texto += "\n" + mensagem;
+        
+        jTextArea1.setText(texto);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,7 +81,7 @@ public class FrmMonitor extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jButton1))
         );
 
