@@ -15,7 +15,7 @@ import java.net.Socket;
 
 /**
  *
- * @author alunon
+ * @author daniel
  */
 public class servermonitor {
 
