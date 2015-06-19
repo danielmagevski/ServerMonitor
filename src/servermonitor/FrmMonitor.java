@@ -27,7 +27,16 @@ public class FrmMonitor extends javax.swing.JFrame {
         
         jTextArea1.setText(texto);
     }
-
+    
+public void escrever(String mensagem){
+        
+        String texto="";
+        
+        texto = jTextArea1.getText();
+        texto += "\n" + mensagem;
+        
+        jTextArea1.setText(texto);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
